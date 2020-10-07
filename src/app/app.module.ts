@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   EventsListComponent,
   EventDetailsComponent,
+  CreateSessionComponent,
   CreateEventComponent,
   EventRouteActivator,
   EventService,
@@ -27,6 +28,7 @@ import { AuthService } from './user/auth.service'
   declarations: [
     EventsAppComponent,
     EventsListComponent,
+    CreateSessionComponent,
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
