@@ -18,7 +18,7 @@ import {
   from './events/index'
 
 import { NavBarComponent } from './nav/navbar.component'
-import { ToastrService } from './common/toastr.service'
+import { Toastr, TOASTR_TOKEN } from './common/toastr.service'
 import { CollapsibleComponentComponent } from './common/collapsible-well.component'
 
 import { Error404Component } from './errors/404.component'
@@ -26,6 +26,8 @@ import { EventsAppComponent } from './events-app.component'
 import { appRoutes } from './routes'
 import { ReturnStatement } from '@angular/compiler';
 import { AuthService } from './user/auth.service'
+
+let toastr: Toastr = window['toastr']
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { AuthService } from './user/auth.service'
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
     EventRouteActivator,
     EventsListResolver,
     AuthService,
